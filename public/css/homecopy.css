@@ -26,20 +26,19 @@
     border-radius: 5px;
 }
 
-.home__home__nav--menu ul {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-}
-
-
 .home__header__nav--menu ul li {
     background-color: var(--colorGris);
     width: 100%;
+    margin-bottom: 2px;
     font-size: 1.2rem;
     text-transform: uppercase;
     padding: 5px;
 }
+
+.home__header__nav--menu ul li:last-child {
+    margin-bottom: 0;
+}
+
 
 /* MAIN */
 .home__main__section--banner{
@@ -48,19 +47,13 @@
 
 .home__main__section--products {
     margin-top: 30px;
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.home__main__section--product {
-    width: 300px;
 }
 
 .home__main__section--product-box {
     position: relative;
     margin-bottom: 20px;
-}
 
+}
 
 .home__main__section--product-image {
     width: 100%;
@@ -112,7 +105,7 @@
 }
 
 
-@media (min-width: 481px){
+@media (min-width: 768px){
 
 /*HEADER*/
 
@@ -120,17 +113,18 @@
         display: none;
     }
 
-    .home__home__nav--menu ul {
-        flex-direction: row;
-        justify-content: space-between;
-        gap: 6px;
-    }
     
     .home__header__nav--menu ul li {
+    width: 15%;
     margin-bottom: 20px;
     font-size: 0.9rem;
-  
+    float: left;
+    margin-right: 2%;
 } 
+
+.home__header__nav--menu ul li:last-child{
+    margin-right: 0;
+}
 
 /*MAIN*/
 .home__main__section--banner {
@@ -140,30 +134,35 @@
 .home__main__section--banner img{
     width: 100%;
 }
-
-.home__main__section--products {
-    justify-content: space-between;
+.home__main__section--products{
+    overflow: hidden;
 }
 
 .home__main__section--product {
-    width: 48%;
+    width: 49%;
+    float: left;
+    margin-right: 2%;
 }
 
-
+.home__main__section--product:nth-child(even){
+    margin-right: 0%;
+}
 }
 
-@media (min-width: 769px){
+@media (min-width: 1024px){
 
 /*MAIN*/
-
-.home__header__nav--menu ul {
-    gap: 20;
-}
-
-
 .home__main__section--product {
     width: 32%;
 
+}
+
+.home__main__section--product:nth-child(even){
+    margin-right: 2%;
+}
+
+.home__main__section--product:nth-child(3n){
+    margin-right: 0%;
 }
 
 /*FOOTER*/
@@ -175,6 +174,7 @@
 }
 
 .home__footer__nav--menu ul li{
+    display: inline;
     margin-bottom: 0;
     text-transform: capitalize;
     padding: 0 10px;
